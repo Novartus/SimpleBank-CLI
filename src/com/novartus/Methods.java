@@ -6,41 +6,57 @@ public class Methods extends Main{
     Scanner scanner = new Scanner(System.in);
 
     void CreateAccount(){
-        System.out.println("Bank Add Customer Menu");
-        System.out.println("Please Enter an account balance");
-        double balance = scanner.nextDouble();
-        accountBalances[size] = balance;
-        System.out.println("Please enter an account holder name: ");
-        scanner.nextLine();
-        String name = scanner.nextLine();
-        accountNames[size] = name;
-        System.out.println("Customer's ID is :" + size);
-        size += 1;
+        try {
+            System.out.println("Bank Add Customer Menu");
+            System.out.println("Please Enter an account balance");
+            double balance = scanner.nextDouble();
+            accountBalances[size] = balance;
+            System.out.println("Please enter an account holder name: ");
+            scanner.nextLine();
+            String name = scanner.nextLine();
+            accountNames[size] = name;
+            System.out.println("Customer's ID is :" + size);
+            size += 1;
+        } catch (Exception e) {
+            System.out.println("Please Try Again Option 1");
+        }
     }
 
     void ChangeCustomerName(){
-        System.out.println("Bank Change Name Menu");
-        System.out.println("Please Enter a customer ID to change their name");
-        int index = scanner.nextInt();
-        System.out.println("What is the customer's new name?");
-        scanner.nextLine();
-        accountNames[index] = scanner.nextLine();
+        try {
+            System.out.println("Bank Change Name Menu");
+            System.out.println("Please Enter a customer ID to change their name");
+            int index = scanner.nextInt();
+            System.out.println("What is the customer's new name?");
+            scanner.nextLine();
+            accountNames[index] = scanner.nextLine();
+        } catch (Exception e) {
+            System.out.println("Please Try Again Option 2");
+        }
     }
 
     void AccountBalance(){
-        System.out.println("Bank Check Balance Menu");
-        System.out.println("Please Enter a customer ID to check their balance");
-        int index = scanner.nextInt();
-        double balance = accountBalances[index];
-        System.out.println("This customer has $" + balance + " in their account");
+        try {
+            System.out.println("Bank Check Balance Menu");
+            System.out.println("Please Enter a customer ID to check their balance");
+            int index = scanner.nextInt();
+            double balance = accountBalances[index];
+            System.out.println("This customer has $" + balance + " in their account");
+        } catch (Exception e) {
+            System.out.println("Please Try Again Option 3");
+        }
     }
 
     void ModifyBalance(){
-        System.out.println("Bank Modify Balance Menu");
-        System.out.println("Please Enter a customer ID to check their balance");
-        int index = scanner.nextInt();
-        System.out.println("What is the customer's new account balance");
-        accountBalances[index] = scanner.nextDouble();
+        try {
+            System.out.println("Bank Modify Balance Menu");
+            System.out.println("Please Enter a customer ID to check their balance");
+            int index = scanner.nextInt();
+            System.out.println("What is the customer's new account balance");
+            accountBalances[index] = scanner.nextDouble();
+        } catch (Exception e) {
+            System.out.println("Please Try Again Option 4");
+        }
     }
 
     void Summary(){
