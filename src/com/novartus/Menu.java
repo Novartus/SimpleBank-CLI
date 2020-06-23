@@ -5,9 +5,10 @@ import java.util.Scanner;
 
 public class Menu extends Main {
     protected Menu() {
+
         Scanner scanner = new Scanner(System.in);
         Methods objMethods = new Methods();
-        while (flag != -1) {
+        while (count != -1) {
             System.out.println("Bank Admin Menu");
             System.out.println("Please Enter a Menu Option");
             System.out.println("(1): Add Customer to Bank");
@@ -15,6 +16,7 @@ public class Menu extends Main {
             System.out.println("(3): Check Account Balance");
             System.out.println("(4): Modify Account Balance");
             System.out.println("(5): Summary of All Accounts");
+            System.out.println("(6): Cloud Database Connectivity ?");
             System.out.println("(-1): Quit");
 
             int userInput = scanner.nextInt();
@@ -28,6 +30,8 @@ public class Menu extends Main {
                 objMethods.ModifyBalance();
             } else if (userInput == 5) {
                 objMethods.Summary();
+            } else if (userInput == -1) {
+                objMethods.MongoDBConnection();
             } else if (userInput == -1) {
                 System.exit(-1);
             } else {
